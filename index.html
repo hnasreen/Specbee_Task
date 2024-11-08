@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaker Carousel</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <div class="title-text">
+        <h1> View our Featured Speakers for the Event </h1>
+        <p>Speakers are core contributors and industry thought leaders working at <span
+                class="company-text">companies</span> that push for innovation</p>
+    </div>
+
+
+    <!-- Speaker Details Popover -->
+    <div id="speakerDetailsPopover" class="popover">
+        <div class="popover-content">
+            <button class="close-btn">×</button>
+            <div class="popover-body">
+                <div class="left-side">
+                    <img id="popoverImage" src="" alt="" class="popover-image">
+                    <div id="popoverInfo">
+                        <h3 id="popoverName"></h3>
+                        <p id="popoverTitle"></p>
+                        <p id="popoverCompany"></p>
+                    </div>
+                </div>
+                <div class="right-side">
+                    <p>Synergy rule defines the optimal solution to the problem of combining several scores of monotonic
+                        rules. It is based on effective methods of conditional probability estimation in the set of
+                        monotonic functions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container swiper">
+        <div class="card-wrapper">
+            <div class="card-list swiper-wrapper" id="speakerContainer">
+                <!-- Cards will be added dynamically -->
+            </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+
+
+    <div>
+        <button class="dummy-button">see the program</button>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
