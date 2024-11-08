@@ -113,12 +113,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".container").classList.remove("swiper-shift");
   });
 
-  popover.addEventListener("click", (event) => {
-    if (event.target === popover) {
-      closePopoverButton.click();
-    }
-  });
-
   // Initialize Swiper
   new Swiper(".card-wrapper", {
     slidesPerView: "auto",
