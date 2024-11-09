@@ -34,7 +34,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 250px !important;
+    width: 242px !important;
     height: 300px !important;
     background: #fff;
     border-radius: 5px;
@@ -167,7 +167,7 @@ body {
     width: 2px;
     color: #C5C5C5;
     margin-right: 10px;
-    height: 120px;
+  
 }
 
 .pCompany {
@@ -182,4 +182,49 @@ body {
 
 #speakerDetailsPopover {
     display: none;
+}
+
+
+@media (max-width: 768px) {
+    .popover-body {
+        flex-direction: column; 
+    }
+
+    .right-side {
+        display: none; 
+    }
+
+    .left-side {
+        width: 100%; 
+        margin-bottom: 10px; 
+    }
+
+   
+    .popover-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .close-btn {
+        font-size: 1.2rem; 
+    }
+}
+
+@media (max-width: 480px) {
+    .popover-body {
+        padding: 0.5rem; 
+    }
+
+    .popover-image {
+        width: 70px;
+        height: 70px;
+    }
+
+    #popoverInfo h3 {
+        font-size: 1rem;
+    }
+
+    .pCompany, .pTitle {
+        font-size: 0.8rem; 
+    }
 }
