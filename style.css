@@ -4,18 +4,19 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: rgb(248, 238, 238);
+    background-color: #FFFFFF;
     flex-direction: column;
 }
 
 .container {
-    width: 70%;
+    width: 74%;
     max-width: 100%;
-    overflow: hidden;
-    position: relative;
     padding: 0 30px;
     transition: margin-top 0.3s ease;
     padding-top: 50px;
+    box-shadow: 4px 10px 24px 0px #0000001A;
+    border-radius: 10px;
+
 }
 
 .card-wrapper {
@@ -34,15 +35,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 242px !important;
+    width: 257px !important;
     height: 300px !important;
     background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 4px 10px 24px 0px #0000001A;
     overflow: hidden;
     padding: 1rem;
     text-align: center;
-    margin-right: 10px;
     border-color: white;
     cursor: pointer;
 }
@@ -98,14 +98,18 @@ body {
     margin-bottom: 0;
 }
 
+
+
+
 .popover {
     width: 70%;
     max-width: 100%;
     overflow: hidden;
     position: relative;
-    padding: 0 30px;
+    padding: 30px 30px 30px 30px;
     transition: margin-top 0.3s ease;
     margin-bottom: 10px;
+    box-shadow: 4px 10px 24px 0px #0000001A;
 }
 
 .popover-content {
@@ -148,8 +152,8 @@ body {
 
 .popover-image {
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 130px;
     object-fit: cover;
     margin-bottom: 0.5rem;
     margin-right: 10px
@@ -167,7 +171,8 @@ body {
     width: 2px;
     color: #C5C5C5;
     margin-right: 10px;
-  
+    margin-left: 10px;
+
 }
 
 .pCompany {
@@ -187,32 +192,32 @@ body {
 
 @media (max-width: 768px) {
     .popover-body {
-        flex-direction: column; 
+        flex-direction: column;
     }
 
     .right-side {
-        display: none; 
+        display: none;
     }
 
     .left-side {
-        width: 100%; 
-        margin-bottom: 10px; 
+        width: 100%;
+        margin-bottom: 10px;
     }
 
-   
+
     .popover-image {
         width: 80px;
         height: 80px;
     }
 
     .close-btn {
-        font-size: 1.2rem; 
+        font-size: 1.2rem;
     }
 }
 
 @media (max-width: 480px) {
     .popover-body {
-        padding: 0.5rem; 
+        padding: 0.5rem;
     }
 
     .popover-image {
@@ -224,7 +229,68 @@ body {
         font-size: 1rem;
     }
 
-    .pCompany, .pTitle {
-        font-size: 0.8rem; 
+    .pCompany,
+    .pTitle {
+        font-size: 0.8rem;
     }
+}
+
+.icons-image {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.img1 {
+    width: 24px;
+    height: 24px;
+    margin-right: 3px;
+}
+
+.img {
+    width: 22px;
+    height: 22px;
+
+}
+
+.swiper-nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    top: -140px;
+
+
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: #6F6F6F !important;
+    cursor: pointer;
+    border: 1px solid #DADADA;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+
+
+
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 10px !important;
+}
+
+.swiper-button-prev {
+    margin-left: 130px;
+
+}
+
+.swiper-button-next {
+    margin-right: 130px;
+
 }
