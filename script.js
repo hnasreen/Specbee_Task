@@ -4,61 +4,71 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "John Doe",
       title: "Chief Marketing Officer",
       company: "Acme Corp",
-      image: "https://res.cloudinary.com/dcq6ethny/image/upload/v1731091813/SpecBee/rhosur0bukm4rvg7ijr2.jpg",
+      image:
+        "https://res.cloudinary.com/dcq6ethny/image/upload/v1731091813/SpecBee/rhosur0bukm4rvg7ijr2.jpg",
     },
     {
       name: "Jane Smith",
       title: "Chief Engagement Officer",
       company: "Tech Solutions",
-      image: "https://res.cloudinary.com/dcq6ethny/image/upload/v1731091813/SpecBee/pcca5kzeljimqk7nezsj.png",
+      image:
+        "https://res.cloudinary.com/dcq6ethny/image/upload/v1731091813/SpecBee/pcca5kzeljimqk7nezsj.png",
     },
     {
       name: "Alice Brown",
       title: "Senior Developer",
       company: "Code Factory",
-      image: "https://res.cloudinary.com/dcq6ethny/image/upload/v1731091812/SpecBee/qujdfzp4tbfyyc7qbrt5.jpg",
+      image:
+        "https://res.cloudinary.com/dcq6ethny/image/upload/v1731091812/SpecBee/qujdfzp4tbfyyc7qbrt5.jpg",
     },
     {
       name: "Michael Lee",
       title: "Product Manager",
       company: "Next Innovations",
-      image: "https://res.cloudinary.com/dcq6ethny/image/upload/v1731091812/SpecBee/htzsah9eyyx4luooj6bu.jpg",
+      image:
+        "https://res.cloudinary.com/dcq6ethny/image/upload/v1731091812/SpecBee/htzsah9eyyx4luooj6bu.jpg",
     },
     {
       name: "Sarah Wilson",
       title: "Chief Technical Officer",
       company: "Tech World",
-      image: "https://res.cloudinary.com/dcq6ethny/image/upload/v1731091812/SpecBee/kn2rga906zgamgzek7iw.jpg",
+      image:
+        "https://res.cloudinary.com/dcq6ethny/image/upload/v1731091812/SpecBee/kn2rga906zgamgzek7iw.jpg",
     },
     {
       name: "David Johnson",
       title: "UX Designer",
       company: "Creative Labs",
-      image: "https://res.cloudinary.com/dcq6ethny/image/upload/v1731091812/SpecBee/zw4oyb0e17qsm16ust4o.jpg",
+      image:
+        "https://res.cloudinary.com/dcq6ethny/image/upload/v1731091812/SpecBee/zw4oyb0e17qsm16ust4o.jpg",
     },
     {
       name: "Emily Davis",
       title: "Data Scientist",
       company: "Insightful Analytics",
-      image: "https://res.cloudinary.com/dcq6ethny/image/upload/v1731091811/SpecBee/imkhwqbyt5moppwazae6.webp",
+      image:
+        "https://res.cloudinary.com/dcq6ethny/image/upload/v1731091811/SpecBee/imkhwqbyt5moppwazae6.webp",
     },
     {
       name: "Robert Garcia",
       title: "Chief Operations Officer",
       company: "Efficient Systems",
-      image: "https://res.cloudinary.com/dcq6ethny/image/upload/v1731091811/SpecBee/lobayhwgxanehuemvve8.webp",
+      image:
+        "https://res.cloudinary.com/dcq6ethny/image/upload/v1731091811/SpecBee/lobayhwgxanehuemvve8.webp",
     },
     {
       name: "Linda Martinez",
       title: "Marketing Director",
       company: "Bright Minds",
-      image: "https://res.cloudinary.com/dcq6ethny/image/upload/v1731091811/SpecBee/fbeiolhi2uhdmhzwxv5l.jpg",
+      image:
+        "https://res.cloudinary.com/dcq6ethny/image/upload/v1731091811/SpecBee/fbeiolhi2uhdmhzwxv5l.jpg",
     },
     {
       name: "James Miller",
       title: "Software Engineer",
       company: "Digital Innovations",
-      image: "https://res.cloudinary.com/dcq6ethny/image/upload/v1731091811/SpecBee/nm5dzvejhsvhzweopaug.jpg",
+      image:
+        "https://res.cloudinary.com/dcq6ethny/image/upload/v1731091811/SpecBee/nm5dzvejhsvhzweopaug.jpg",
     },
   ];
 
@@ -85,32 +95,20 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
 
     speakerContainer.appendChild(card);
+
+    // Show popover on card click
+    card.addEventListener("click", () => {
+      popover.querySelector(".popover-image").src = speaker.image;
+      popover.querySelector(".pName").textContent = speaker.name;
+      popover.querySelector(".pTitle").textContent = speaker.title;
+      popover.querySelector(".pCompany").textContent = speaker.company;
+      popover.style.display = "block";
+    });
   });
 
-  // Handle card click to show popover
-  speakerContainer.addEventListener("click", (event) => {
-    const card = event.target.closest(".swiper-slide");
-    if (card) {
-      const name = card.getAttribute("data-name");
-      const title = card.getAttribute("data-title");
-      const company = card.getAttribute("data-company");
-      const image = card.getAttribute("data-image");
-
-      // Populate popover with speaker details
-      document.getElementById("popoverName").textContent = name;
-      document.getElementById("popoverTitle").textContent = title;
-      document.getElementById("popoverCompany").textContent = company;
-      document.getElementById("popoverImage").src = image;
-
-      popover.classList.add("show");
-
-      document.querySelector(".container").classList.add("swiper-shift");
-    }
-  });
-
+  // Close popover on close button click
   closePopoverButton.addEventListener("click", () => {
-    popover.classList.remove("show");
-    document.querySelector(".container").classList.remove("swiper-shift");
+    popover.style.display = "none";
   });
 
   // Initialize Swiper

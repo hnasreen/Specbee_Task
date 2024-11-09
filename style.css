@@ -4,7 +4,6 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    margin: 0;
     background-color: rgb(248, 238, 238);
     flex-direction: column;
 }
@@ -85,7 +84,7 @@ body {
     color: white;
     border-radius: 5px;
     border: none;
-    margin-top: 50px;
+    margin-top: 20px;
     width: 150px;
     height: 30px;
 }
@@ -96,75 +95,41 @@ body {
 
 .title-text {
     text-align: center;
+    margin-bottom: 0;
 }
 
-/* Positioning the popover */
 .popover {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    z-index: 9999;
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.popover.show {
-    display: block;
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-}
-
-.container.swiper-shift {
-    padding-top: 100px;
+    width: 70%;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 0 30px;
+    transition: margin-top 0.3s ease;
+    margin-bottom: 10px;
 }
 
 .popover-content {
     display: flex;
-    flex-direction: row;
-    gap: 20px;
     align-items: center;
+    overflow: hidden;
 }
 
-.left-side {
+.popover-body {
+    position: relative;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.popover-image {
-    width: 120px;
-    height: 120px;
+    flex-direction: row;
+    justify-content: center;
+    width: 100% !important;
+    height: 150px !important;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 1rem;
+    text-align: left;
+    border-color: white;
+    cursor: pointer;
     object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 10px;
-}
-
-#popoverInfo {
-    text-align: center;
-}
-
-#popoverName {
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-#popoverTitle,
-#popoverCompany {
-    font-size: 1rem;
-    color: #aaa;
-}
-
-.right-side {
-    max-width: 300px;
-    font-size: 0.9rem;
-    color: #ddd;
-    line-height: 1.4;
 }
 
 .close-btn {
@@ -172,8 +137,49 @@ body {
     top: 10px;
     right: 10px;
     font-size: 1.5rem;
-    color: white;
+    color: rgb(177, 174, 174);
     background: transparent;
     border: none;
     cursor: pointer;
+    z-index: 10;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.popover-image {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+    margin-right: 10px
+}
+
+.left-side {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 1500px;
+}
+
+.divider-line {
+    width: 2px;
+    color: #C5C5C5;
+    margin-right: 10px;
+    height: 120px;
+}
+
+.pCompany {
+    font-size: 0.75rem;
+    color: #aaa;
+}
+
+.pTitle {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+#speakerDetailsPopover {
+    display: none;
 }
